@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Comics from './views/Comics.vue'
+import Characters from './views/Characters.vue'
+import Series from './views/Series.vue'
 
 Vue.use(Router)
 
@@ -10,6 +13,21 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/comics',
+      name: 'comics',
+      component: Comics
+    },
+    {
+      path: '/characters',
+      name: 'characters',
+      component: Characters
+    },
+    {
+      path: '/series',
+      name: 'series',
+      component: Series
     },
     {
       path: '/about',
