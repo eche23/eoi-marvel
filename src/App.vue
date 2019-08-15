@@ -77,7 +77,7 @@ html{
   border-radius: 15px;
   display: flex;
   flex: 2;
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .category{
