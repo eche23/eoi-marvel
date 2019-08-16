@@ -1,7 +1,7 @@
 <template>
   <div class="item-home">
-    <a href="#"><img class="item-photo" src="../res/img/marvel.jpg" alt=""></a>
-    <a href=""><h3 class="item-title">TITLE</h3></a>
+    <a href="#"><img class="item-photo" :src="item.thumbnail.path+'.'+item.thumbnail.extension" alt=""></a>
+    <a href=""><h4 class="item-title">{{item.name}}{{item.title}}</h4></a>
   </div>
 </template>
 
@@ -9,7 +9,8 @@
 export default {
   name: 'ItemHome',
   props: {
-    msg: String
+    msg: String,
+    item: Object
   }
 }
 </script>
@@ -23,6 +24,7 @@ export default {
     flex-direction: column;
     align-items: center;
     
+    
 }
 
 a{
@@ -31,13 +33,17 @@ a{
 
 .item-title{
     color: #FFFFFF;
+    display: flex;
+    flex: 1;
+    max-width: 200px;
+    
 }
 
 .item-photo{
     display: flex;
     flex: 1;
-    height: 280px;
-    width: 200px;
+    height: 250px;
+    max-width: 200px;
 
 }
 

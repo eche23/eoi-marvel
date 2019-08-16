@@ -1,10 +1,8 @@
 <template>
   <div class="list-home">
-    <ItemHome/>
-    <ItemHome/>
-    <ItemHome/>
-    <ItemHome/>
-    <ItemHome/>
+    <div class="" v-for="item in list" :key="item.id">
+      <ItemHome :item="item" class="item"/>
+    </div>
   </div>
 </template>
 
@@ -17,10 +15,25 @@ import ItemHome from '@/components/ItemHome.vue'
 export default {
   name: 'ListHome',
   props: {
-    msg: String
+    msg: String,
+    list: Array
   },
   components: {
     ItemHome
+  },
+  beforeMount(){
+    this.len = this.list.length
+    
+  },
+  data(){
+    return {
+      homeList: [],
+      len: 0
+    }
+  },
+  methods:{
+
+    
   }
 }
 </script>
@@ -31,9 +44,10 @@ export default {
 .list-home{
   height: 350px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border: #F21826 solid;
   border-radius: 5px;
 }
+
 
 </style>
