@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <div id="nav">
-      <img class="logo" src="./res/img/descarga1.png" alt="">
+      <a href="#"><img class="logo" src="./res/img/descarga1.png" alt=""></a>
       <div class="nav-list">
         <router-link to="/">Home</router-link>
         <router-link to="/comics/">Comics</router-link>
