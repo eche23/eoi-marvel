@@ -5,7 +5,7 @@
     <a href="#/comics/"><p class="home-more">+more</p></a>
     <a href="#/characters/"><h2 class="home-category">Characters</h2></a>
     <ListHome :list="characters"/>
-    <a href="#/characterers"><p class="home-more">+more</p></a>
+    <a href="#/characters"><p class="home-more">+more</p></a>
     <a href="#/series/"><h2 class="home-category">Series</h2></a>
     <ListHome :list="series"/>
     <a href="#/series/"><p class="home-more">+more</p></a>
