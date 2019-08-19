@@ -35,7 +35,7 @@ export default {
       this.arrayPages();
       console.log(this.page);
       
-      let pag = this.page*20;
+      let pag = (this.page-1)*20;
 
       Vue.axios.get(data.url+"/v1/public/series?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset="+pag).then(res => {
         this.series = res.data;
@@ -47,7 +47,7 @@ export default {
     this.pages = [];
     this.arrayPages();
 
-    Vue.axios.get(data.url+"/v1/public/series?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset="+this.page).then(res => {
+    Vue.axios.get(data.url+"/v1/public/series?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset=0").then(res => {
     this.series = res.data;
     this.total = this.series.data.total;
     this.series = this.series.data.results;
