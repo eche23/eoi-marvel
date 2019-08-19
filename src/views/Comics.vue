@@ -8,7 +8,7 @@
     </div>
     <div class="pages">
       <div v-for="index in pages" class="page" :key="index">
-        <button @click="changePage(index)" v-if="index < 1" :class="{select: index == page, invisible: index < 1}"> </button>
+        <button @click="changePage(index)" v-if="index < 1 || index > numPag" :class="{select: index == page, invisible: index < 1}"> </button>
         <button @click="changePage(index)" v-else :class="{select: index == page}">{{index}}</button>
       </div>
     </div>
