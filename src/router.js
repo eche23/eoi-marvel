@@ -4,7 +4,7 @@ import Home from './views/Home.vue'
 import Comics from './views/Comics.vue'
 import Characters from './views/Characters.vue'
 import Series from './views/Series.vue'
-
+import Detail from './views/Detail.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -30,12 +30,19 @@ export default new Router({
       component: Series
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/comics/:id',
+      name: 'detail',
+      component: Detail
+    },
+    {
+      path: '/characters/:id',
+      name: 'detail',
+      component: Detail
+    },
+    {
+      path: '/series/:id',
+      name: 'detail',
+      component: Detail
     }
   ]
 })

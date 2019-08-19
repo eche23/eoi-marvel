@@ -1,7 +1,7 @@
 <template>
   <div class="item-home">
-    <a href="#"><img class="item-photo" :src="item.thumbnail.path+'.'+item.thumbnail.extension" alt=""></a>
-    <a href=""><h4 class="item-title">{{item.name}}{{item.title}}</h4></a>
+    <router-link :to="'/comics/'+item.id"><img class="item-photo" :src="item.thumbnail.path+'.'+item.thumbnail.extension" alt=""></router-link>
+    <router-link :to="'/comics/'+item.id"><h4 class="item-title">{{item.name}}{{item.title}}</h4></router-link>
   </div>
 </template>
 
@@ -23,7 +23,6 @@ export default {
     margin: 10px;
     flex-direction: column;
     align-items: center;
-    
     
 }
 
