@@ -10,12 +10,15 @@
         <router-link to="/about">About</router-link>
       </div>
       <div class="option-search">
-        <select name="category" id="" class="category">
+        <select name="category" id="" class="category" v-model="category">
           <option value="comics">Comics</option>
           <option value="characters">Characters</option>
           <option value="series">Series</option>
         </select>
-        <input type="text" class="search" placeholder="Search">
+        <input type="text" id="search" class="search" placeholder="Search" v-model="name">
+        
+        
+        <router-link :to="'/'+category+'?title='+name+'&apikey='+data.publicKey+'&hash='+data.hash"><button class="btn-search"></button></router-link>
 
       </div>
       
@@ -26,12 +29,19 @@
 
 <script>
 
+import data from '@/res/data/data.json'
+
 export default {
 
   data(){
     return {
-
+      category: "",
+      name: "",
+      data: data
     }
+  },
+  methods:{
+
   }
 }
 </script>

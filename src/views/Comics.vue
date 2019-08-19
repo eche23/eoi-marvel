@@ -37,7 +37,7 @@ export default {
       
       let pag = (this.page-1)*20;
 
-      Vue.axios.get(data.url+"/v1/public/comics?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset="+pag).then(res => {
+      Vue.axios.get(data.url+"/v1/public/comics?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset="+pag+"&titleStartsWith="+this.$route.query.title).then(res => {
         this.comics = res.data;
         this.comics = this.comics.data.results;
       })
@@ -46,8 +46,11 @@ export default {
   created(){
     this.pages = [];
     this.arrayPages();
-
-    Vue.axios.get(data.url+"/v1/public/comics?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset=0").then(res => {
+    this.title = this.$route.query.title;
+    console.log(this.title);
+    
+    
+    Vue.axios.get(data.url+"/v1/public/comics?ts=1&apikey="+data.publicKey+"&hash="+data.hash+"&limit=20&offset=0&titleStartsWith="+this.$route.query.title).then(res => {
     this.comics = res.data;
     this.total = this.comics.data.total;
     this.comics = this.comics.data.results;
@@ -62,7 +65,8 @@ export default {
       data: data,
       numPag: 0,
       page: 1,
-      pages: []
+      pages: [],
+      title: ""
     }
   },
   methods: {
